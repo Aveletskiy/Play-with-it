@@ -22,7 +22,7 @@ public class Application extends Controller {
         Person person = Form.form(Person.class).bindFromRequest().get();
         person.save();
 
-        return redirect((Call) index());
+        return redirect(routes.Application.index());
     }
 
     public static Result getPersons(){
