@@ -21,7 +21,8 @@ public class Application extends Controller {
     public static Result addPerson() {
         Person person = Form.form(Person.class).bindFromRequest().get();
         person.save();
-        return redirect(routes.Application.index());
+
+        return redirect((Call) index());
     }
 
     public static Result getPersons(){
